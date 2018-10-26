@@ -348,6 +348,13 @@ class ProblemWriter_gams(AbstractProblemWriter):
         # Filename for optionally writing solution values and marginals
         # Set to True by GAMSSolver
         put_results = io_options.pop("put_results", None)
+        
+        ## Pop to handle error
+        # Suffix dual is always done anway
+        suffixes_from_io = io_options.pop('suffixes',[])
+
+        # Options not popped
+        options_from_io = io_options.pop('options',None)
 
         if len(io_options):
             raise ValueError(

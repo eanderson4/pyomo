@@ -54,6 +54,8 @@ class _GAMSSolver(object):
 
         self.options = Options()
 
+        self.name = "gams"
+
     def version(self):
         """Returns a 4-tuple describing the solver executable version."""
         if self._version is None:
